@@ -1,537 +1,449 @@
-<!DOCTYPE html>
-  
-<html lang="en">
-  
-
-  
-<head>
-  
-  <meta charset="UTF-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>Calamay Run 2025</title>
-  
-  <link
-  
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Nunito:wght@300;400;600&display=swap"
-  
-    rel="stylesheet">
-  
-    <link href="https://fonts.googleapis.com/css2?family=Tektur&display=swap" rel="stylesheet">
-  
-
-  
-
-  
-  <style>
-  
-    /* General Styles */
-  
-    body {
-  
-      font-family: 'Nunito', sans-serif;
-  
-      margin: 0;
-  
-      padding: 0;
-  
-      color: #4E342E;
-  
-      background: #F7F3F0;
-  
-    }
-  
-
-  
-    h1,
-  
-    h2,
-  
-    h3 {
-  
-      font-family: 'Montserrat', sans-serif;
-  
-    }
-  
-
-  
-    /* Banner Section */
-  
-    .banner {
-  
-      position: relative;
-  
-      width: 100%;
-  
-      height: 50vh;
-  
-      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
-  
-        url('banner.jpg') bottom/cover no-repeat;
-  
-      display: flex;
-  
-      align-items: center;
-  
-      justify-content: center;
-  
-      text-align: center;
-  
-      color: white;
-  
-    }
-  
-
-  
-    .banner h1 {
-  
-      font-family: 'Tektur', sans-serif;
-  
-      font-size: 4em;
-  
-      font-weight: 700;
-  
-      text-transform: uppercase;
-  
-      padding: 15px 30px;
-  
-      /* background: rgba(0, 0, 0, 0.6); */
-  
-      /* border-radius: 10px; */
-  
-      text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.8);
-  
-      animation: fadeIn .8s ease-in-out;
-  
-
-  
-      background-image: url('./rock.jpeg');
-  
-      -webkit-background-clip: text;
-  
-      background-clip: text;
-  
-      color: rgba(249, 249, 249, 0.8);
-  
-
-  
-       /* Outline effect */
-  
-      text-shadow: 
-  
-        -2px -2px 0 #5A2E14, 
-  
-        2px -2px 0 #5A2E14, 
-  
-        -2px 2px 0 #5A2E14, 
-  
-        2px 2px 0 #5A2E14, 
-  
-        4px 4px 10px rgba(0, 0, 0, 0.5); 
-  
-    }
-  
-
-  
-
-  
-    /* Event Info */
-  
-    .event-info {
-  
-      background: #eadfdf;
-  
-      padding: 20px 80px;
-  
-      font-size: 18px;
-  
-      /* font-weight: 600; */
-  
-      color: #3E2723;
-  
-      line-height: 1.2;
-  
-      /* border-radius: 10px; */
-  
-      /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
-  
-    }
-  
-
-  
-    /* Main Content */
-  
-    .container {
-  
-      text-align: center;
-  
-      padding: 20px;
-  
-      padding-top: 10px;
-  
-      padding-bottom: 40px;
-  
-    }
-  
-
-  
-    .container h2 {
-  
-      font-size: 2.5em;
-  
-      font-weight: 700;
-  
-      color: #6D4C41;
-  
-      margin-bottom: 20px;
-  
-    }
-  
-
-  
-    /* Categories */
-  
-    .categories {
-  
-      display: flex;
-  
-      justify-content: center;
-  
-      gap: 25px;
-  
-      flex-wrap: wrap;
-  
-    }
-  
-
-  
-    .category {
-  
-      background: white;
-  
-      /* padding: 0 0 20px 0; */
-  
-      padding: 10px;
-  
-      padding-bottom: 20px;
-  
-      border-radius: 6px;
-  
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  
-      width: 320px;
-  
-      text-align: center;
-  
-      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  
-      overflow: hidden;
-  
-    }
-  
-
-  
-    .category:hover {
-  
-      transform: translateY(-8px);
-  
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  
-    }
-  
-
-  
-    .category img {
-  
-      width: 100%;
-  
-      height: 200px;
-  
-      object-fit: cover;
-  
-      /* border-radius: 6px 6px 0 0 ; */
-  
-      transition: transform 0.3s ease-in-out;
-  
-    }
-  
-    /* .category:hover img {
-  
-      transform: scale(1.07);
-  
-    } */
-  
-
-  
-    .category h2 {
-  
-      margin: 20px 0 12px;
-  
-      font-size: 1.6em;
-  
-      font-weight: 700;
-  
-      color: #5D4037;
-  
-    }
-  
-
-  
-    .category a {
-  
-      display: inline-block;
-  
-      background: #8D6E63;
-  
-      color: white;
-  
-      padding: 14px 24px;
-  
-      border-radius: 8px;
-  
-      font-weight: 600;
-  
-      text-decoration: none;
-  
-      transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
-  
-    }
-  
-
-  
-    .category a:hover {
-  
-      background: #5D4037;
-  
-      transform: scale(1.05);
-  
-    }
-  
-
-  
-    /* Footer */
-  
-    .footer {
-  
-      margin-top: 50px;
-  
-      padding: 10px;
-  
-      background: #3e2723d7;
-  
-      color: #ffffff;
-  
-      text-align: center;
-  
-      font-size: 1em;
-  
-      line-height: 1.2;
-  
-    }
-  
-
-  
-    .footer h2 {
-  
-      margin-bottom: 10px;
-  
-    }
-  
-
-  
-    .footer p {
-  
-      margin: 10px 0;
-  
-    }
-  
-
-  
-    /* Animations */
-  
-    @keyframes fadeIn {
-  
-      from {
-  
-        opacity: 0;
-  
-        transform: translateY(-20px);
-  
-      }
-  
-      to {
-  
-        opacity: 1;
-  
-        transform: translateY(0);
-  
-      }
-  
-    }
-  
-
-  
-    @keyframes slideIn {
-  
-      from {
-  
-        opacity: 0;
-  
-        transform: translateY(30px);
-  
-      }
-  
-      to {
-  
-        opacity: 1;
-  
-        transform: translateY(0);
-  
-      }
-  
-    }
-  
-
-  
-    @media (max-width: 768px) {
-  
-      .category {
-  
-        width: 90%;
-  
-      }
-      
-      .banner {
-          height: 30vh;
-      }
-  
-
-  
-      .banner h1 {
-  
-        font-size: 2.2em;
-  
-      }
-  
-
-  
-      .event-info {
-  
-        font-size: 1em;
-  
-        padding: 30px 30px;
-  
-      }
-      
-      .container h2 {
-          font-size: 1.7em;
-      }
-      
-      .category h2{
-          font-size: 1.5em;
-      }
-      
-      .footer h2 {
-          font-size: 1.5em;
-      }
-      
-      .footer p{
-          font-size: .9em;
-      }
-  
-    }
-  
-  </style>
-  
-</head>
-  
-
-  
-<body>
-  
-  <div class="banner">
-  
-    <h1>Calamay Run 2025</h1>
-  
-  </div>
-  
-
-  
-  <div class="event-info">
-  
-    <h3><strong>Be Part of the Historic First-Ever Calamay Run in Jagna, Bohol!</strong> </h3>
-  
-    
-  
-    <p>This inaugural event proudly celebrates <strong>Calamay</strong>, the renowned local delicacy of Jagna, known for its rich,
-  
-      sweet flavor and traditional craftsmanship.</p>
-  
-    <p>Join us in promoting health, community spirit, and cultural heritage. All proceeds from this event will contribute
-  
-      to the construction of the Ilihan Shrine, a significant landmark in our town.</p>
-  
-  </div>
-  
-
-  
-  <div class="container">
-  
-    <h2>Select Your Race</h2>
-  
-    <div class="categories">
-  
-      <div class="category">
-  
-        <img src="regular.webp" alt="Regular Rates Category">
-  
-        <h2>Regular Rate Form</h2>
-  
-        <a href="https://forms.gle/EQXTc6kyrBh6nydp8">Join the Race</a>
-  
-      </div>
-  
-      <div class="category">
-  
-        <img src="parent-child.jpg" alt="1.5K Parent-Child Run">
-  
-        <h2>1.5K Parent-Child Run</h2>
-  
-        <a href="https://forms.gle/Rw3q3EzBrqcwvMUw9">Join the Race</a>
-  
-      </div>
-  
-      <div class="category">
-  
-        <img src="student.jfif" alt="Student Rate Form">
-  
-        <h2>Student Rate Form</h2>
-  
-        <a href="https://forms.gle/pLU5xoRn5vsLTCc8A">Join the Race</a>
-  
-      </div>
-  
-    </div>
-  
-  </div>
-  
-
-  
-  <div class="footer">
-  
-    <h2>Contact Us</h2>
-  
-    <p>Email: support@funrun.com | Phone: +6398 7654 3210</p>
-  
-    <p>Location: Pondol, Jagna, Bohol, Philippines 6308</p>
-  
-    <p><strong>Want to register in person?</strong> Visit the Jagna Municipal Hall for on-site registration.</p>
-  
-  </div>
-  
-</body>
-  
-
-  
+<!DOCTYPE html>  
+<html lang="en">  
+  
+<head>  
+  <meta charset="UTF-8">  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <title>Calamay Run 2025</title>  
+  <link  
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Nunito:wght@300;400;600&display=swap"  
+    rel="stylesheet">  
+  <link href="https://fonts.googleapis.com/css2?family=Tektur&display=swap" rel="stylesheet">  
+  <style>  
+    body {  
+      font-family: 'Nunito', sans-serif;  
+      margin: 0;  
+      padding: 0;  
+      color: #4E342E;  
+      background: #F7F3F0;  
+    }  
+  
+    h1,  
+    h2,  
+    h3 {  
+      font-family: 'Montserrat', sans-serif;  
+    }  
+  
+    /* Navigation Bar */  
+    .navbar {  
+      background: rgba(93, 64, 55, 0); /* Semi-transparent */  
+      transition: background 0.3s ease-in-out;  
+    }  
+    .navbar.scrolled {  
+      background: rgba(93, 64, 55, 1); /* Fully opaque when scrolled */  
+    }  
+  
+    .navbar-brand, .nav-link {  
+      color: white !important;  
+      font-weight: 600;  
+    }  
+    .navbar .navbar-brand {  
+      font-family: 'Tektur', sans-serif;  
+      color: white !important;  
+      font-weight: 600;  
+      opacity: 0;  
+      transition: opacity 0.3s ease-in-out;  
+    }  
+  
+    .navbar .navbar-brand.visible {  
+      opacity: 1;  
+    }  
+  
+    .nav-link:hover {  
+      color: #FFD54F !important;  
+    }  
+  
+    .banner {  
+      position: relative;  
+      width: 100%;  
+      height: 50vh;  
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('banner.jpg') bottom/cover no-repeat;  
+      display: flex;  
+      align-items: center;  
+      justify-content: center;  
+      text-align: center;  
+      color: white;  
+    }  
+  
+    .banner h1 {  
+      font-family: 'Tektur', sans-serif;  
+      font-size: 4em;  
+      font-weight: 700;  
+      text-transform: uppercase;  
+      padding: 15px 30px;  
+      text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.8);  
+      background-image: url('./rock.jpeg');  
+      -webkit-background-clip: text;  
+      background-clip: text;  
+      color: rgba(249, 249, 249, 0.8);  
+      text-shadow: -2px -2px 0 #5A2E14, 2px -2px 0 #5A2E14, -2px 2px 0 #5A2E14, 2px 2px 0 #5A2E14, 4px 4px 10px rgba(0, 0, 0, 0.5);  
+    }  
+  
+    .event-info {  
+      padding: 30px;  
+      font-size: 18px;  
+      text-align: center;  
+    }  
+  
+    .container-reg {  
+      text-align: center;  
+      padding: 40px 10px 40px;  
+      width: 100% !important;  
+    }  
+  
+    .container-reg h2, .container-shirt h2 {  
+      text-align: center;  
+      font-size: 2.5em;  
+      font-weight: 700;  
+      color: #6D4C41;  
+      margin-bottom: 20px;  
+    }  
+  
+    .categories {  
+      display: flex;  
+      justify-content: center;  
+      gap: 25px;  
+      flex-wrap: wrap;  
+    }  
+  
+    .category {  
+      background: white;  
+      padding: 10px 10px 20px;  
+      border-radius: 6px;  
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);  
+      width: 320px;  
+      text-align: center;  
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;  
+      overflow: hidden;  
+    }  
+  
+    .category:hover {  
+      transform: translateY(-8px);  
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);  
+    }  
+  
+    .category img {  
+      width: 100%;  
+      height: 200px;  
+      object-fit: cover;  
+      transition: transform 0.3s ease-in-out;  
+    }  
+  
+    .category h2 {  
+      margin: 20px 0 12px;  
+      font-size: 1.6em;  
+      font-weight: 700;  
+      color: #5D4037;  
+    }  
+  
+    .category a, .btn-register {  
+      display: inline-block;  
+      background: #8D6E63;  
+      color: white !important;  
+      padding: 14px 24px;  
+      border-radius: 8px;  
+      font-weight: 600;  
+      text-decoration: none;  
+      transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;  
+      cursor: pointer;  
+    }  
+  
+    .category a:hover, .btn-register:hover {  
+      background: #5D4037;  
+      transform: scale(1.05);  
+    }  
+  
+    .container-shirt {  
+      background: #eadfdf7a;  
+      padding-top: 30px;  
+      padding-bottom: 20px;  
+      border-top: solid 1px #eadfdf;  
+      border-bottom: solid 2px #eadfdf;  
+    }  
+      
+    .container-shir h2 {  
+      line-height: 0;  
+    }  
+  
+    .carousel {  
+      max-height: 70vh;  
+    }  
+  
+    /* Ensure images fit within 60vh */  
+    .carousel-item img {  
+      height: 70vh;  
+      width: 100%;  
+      object-fit:contain; /* Crop images to fill the space without distortion */  
+    }  
+  
+    .carousel-caption h5 {  
+      font-weight: bold;  
+    }  
+  
+    .footer {  
+      margin-top: 50px;  
+      padding: 10px;  
+      background: #3e2723d7;  
+      color: #ffffff;  
+      text-align: center;  
+      font-size: 1em;  
+      line-height: 1.2;  
+    }  
+  
+    .footer h2 {  
+      font-size: 1.5em;  
+      font-weight: 500;  
+      margin-bottom: 10px;  
+      font-weight: 600;  
+    }  
+  
+    .footer p {  
+      margin: 10px 0;  
+      line-height: .8;  
+    }  
+      
+  
+    @media (max-width: 768px) {  
+  
+      .navbar:has(.navbar-collapse.show){  
+        background: rgba(93, 64, 55, 1);  
+      }  
+  
+      .navbar:has(.navbar-collapse.show) .navbar-brand, .navbar:has(.navbar-collapse.show) .nav-item{  
+        opacity: 1;  
+      }  
+  
+      .navbar-nav{  
+        text-align: center;  
+      }  
+  
+      .nav-item{  
+        opacity: 0;  
+        transition: opacity .3s ease-in-out;  
+      }  
+  
+      .nav-item:hover {  
+        background: rgba(255, 255, 255, 0.1);  
+        color: #f8b400;  
+          
+      }  
+  
+      .category {  
+        width: 90%;  
+      }  
+  
+      .banner {  
+        height: 30vh;  
+      }  
+  
+      .banner h1 {  
+        font-size: 2.2em;  
+      }  
+  
+      .event-info {  
+        font-size: 1em;  
+        padding: 30px 30px;  
+      }  
+  
+      .container-reg h2, .container-shirt h2 {  
+        font-size: 1.7em;  
+      }  
+  
+      .category h2 {  
+        font-size: 1.5em;  
+      }  
+  
+      .footer h2 {  
+        font-size: 1.5em;  
+      }  
+  
+      .footer p {  
+        font-size: .9em;  
+      }  
+  
+      .carousel {  
+        max-height: auto;  
+      }  
+  
+      /* Ensure images fit within 60vh */  
+      .carousel-item img {  
+        height: 100%;  
+        width: 100%;  
+        object-fit:fill; /* Crop images to fill the space without distortion */  
+      }  
+    }  
+  </style>  
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"  
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"  
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>  
+</head>  
+  
+<body>  
+  <!-- Navigation Menu -->  
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">  
+    <div class="container">  
+      <a class="navbar-brand" id="navbarTitle" href="#">Calamay Run 2025</a>  
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">  
+        <span class="navbar-toggler-icon"></span>  
+      </button>  
+      <div class="collapse navbar-collapse" id="navbarNav">  
+        <ul class="navbar-nav ms-auto">  
+          <li class="nav-item"><a type="button" onclick="scrollToSection('.container-shirt')" class="nav-link" href="#shirts">Shirts</a></li>  
+          <li class="nav-item"><a type="button" onclick="scrollToSection('.container-reg')" class="nav-link" href="#register">Register</a></li>  
+          <li class="nav-item"><a class="nav-link" href="#route">Route</a></li>  
+          <li class="nav-item"><a class="nav-link" href="#video">Video</a></li>  
+          <li class="nav-item"><a type="button" onclick="scrollToSection('#contact-us')" class="nav-link" href="#contact">Contact</a></li>  
+        </ul>  
+      </div>  
+    </div>  
+  </nav>  
+  <div class="banner">  
+    <h1 id="bannerTitle">Calamay Run 2025</h1>  
+  </div>  
+  <div class="event-info">  
+    <h3>Be Part of the Historic First-Ever Calamay Run in Jagna, Bohol!</h3>  
+    <p>Join us in celebrating Calamay, our local delicacy, while promoting health and community spirit.</p>  
+    <a type="button" onclick="scrollToSection('.container-reg')" class="btn-register">Register Now</a>  
+  </div>  
+  <div class="container-shirt">  
+    <h2>Official Run Shirts</h2>  
+    <div id="carouselShirts" class="carousel carousel-dark slide" data-bs-ride="carousel">  
+      <div class="carousel-indicators">  
+        <button type="button" data-bs-target="#carouselShirts" data-bs-slide-to="0" class="active"  
+          aria-current="true" aria-label="Slide 1"></button>  
+        <button type="button" data-bs-target="#carouselShirts" data-bs-slide-to="1"  
+          aria-label="Slide 2"></button>  
+        <button type="button" data-bs-target="#carouselShirts" data-bs-slide-to="2"  
+          aria-label="Slide 3"></button>  
+      </div>  
+      <div class="carousel-inner">  
+        <div class="carousel-item active">  
+          <img src="./images/shirts/singlet-front.jpg" class="d-block w-100" alt="Singlet Front">  
+          <!-- <div class="carousel-caption d-none d-md-block">  
+            <h5>Singlet-Front</h5>  
+            <p>For 12K and 21K Category only</p>  
+          </div> -->  
+        </div>  
+        <div class="carousel-item">  
+          <img src="./images/shirts/singlet-back.jpg" class="d-block w-100" alt="...">  
+          <!-- <div class="carousel-caption d-none d-md-block">  
+            <h5>Second slide label</h5>  
+            <p>Some representative placeholder content for the second slide.</p>  
+          </div> -->  
+        </div>  
+        <div class="carousel-item">  
+          <img src="./images/shirts/tshirt.jpg" class="d-block w-100" alt="...">  
+          <!-- <div class="carousel-caption d-none d-md-block">  
+            <h5>Third slide label</h5>  
+            <p>Some representative placeholder content for the third slide.</p>  
+          </div> -->  
+        </div>  
+      </div>  
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselShirts" data-bs-slide="prev">  
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>  
+        <span class="visually-hidden">Previous</span>  
+      </button>  
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselShirts" data-bs-slide="next">  
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>  
+        <span class="visually-hidden">Next</span>  
+      </button>  
+    </div>  
+  </div>  
+  <div class="container-reg">  
+    <h2>Select Your Race</h2>  
+    <div class="categories">  
+      <div class="category">  
+        <img src="regular.webp" alt="Regular Rates Category">  
+        <h2>Regular Rate Form</h2>  
+        <a href="https://forms.gle/EQXTc6kyrBh6nydp8">Join the Race</a>  
+      </div>  
+      <div class="category">  
+        <img src="parent-child.jpg" alt="1.5K Parent-Child Run">  
+        <h2>1.5K Parent-Child Run</h2>  
+        <a href="https://forms.gle/Rw3q3EzBrqcwvMUw9">Join the Race</a>  
+      </div>  
+      <div class="category">  
+        <img src="student.jfif" alt="Student Rate Form">  
+        <h2>Student Rate Form</h2>  
+        <a href="https://forms.gle/pLU5xoRn5vsLTCc8A">Join the Race</a>  
+      </div>  
+    </div>  
+  </div>  
+    
+  <div class="footer" id="contact-us">  
+    <h2>Contact Us</h2>  
+    <p>Email: support@funrun.com | Phone: +6398 7654 3210</p>  
+    <p>Location: Pondol, Jagna, Bohol, Philippines 6308</p>  
+    <p><strong>Want to register in person?</strong> Visit the Jagna Municipal Hall for on-site registration.</p>  
+  </div>  
+</body>  
+  
+<script>  
+  document.addEventListener("DOMContentLoaded", function () {  
+    var myCarousel = new bootstrap.Carousel(document.querySelector("#carouselShirts"), {  
+      interval: 5000, // Adjust interval  
+      ride: "carousel",  
+      pause: 'hover'  
+    });  
+  
+    const bannerTitle = document.getElementById("bannerTitle");  
+    const navbarTitle = document.getElementById("navbarTitle");  
+  
+    const observer = new IntersectionObserver(entries => {  
+      entries.forEach(entry => {  
+        if (entry.isIntersecting) {  
+          navbarTitle.classList.remove("visible"); // Hide navbar title  
+        } else {  
+          navbarTitle.classList.add("visible"); // Show navbar title  
+        }  
+      });  
+    }, { threshold: 0.1 });  
+  
+    observer.observe(bannerTitle);  
+  
+    //////////////////////////////////////////////////////////////  
+  
+    const navbar = document.querySelector(".navbar");  
+    const banner = document.querySelector(".banner");  
+  
+    const observerNav = new IntersectionObserver(entries => {  
+      entries.forEach(entry => {  
+        if (entry.isIntersecting) {  
+          navbar.classList.remove("scrolled"); // Semi-transparent  
+        } else {  
+          navbar.classList.add("scrolled"); // Fully opaque  
+        }  
+      });  
+    }, { threshold: 0.1 });  
+  
+    observerNav.observe(banner);  
+  
+    ////////////////////////////////////////////////////////////  
+  
+    const navLinks = document.querySelectorAll(".nav-item a");  
+    const navbarCollapse = document.querySelector(".navbar-collapse");  
+  
+    navLinks.forEach(link => {  
+      link.addEventListener("click", function () {  
+        if (navbarCollapse.classList.contains("show")) {  
+          new bootstrap.Collapse(navbarCollapse, { toggle: true });  
+        }  
+      });  
+    });  
+  });  
+  
+  function scrollToSection(selector) {  
+    // document.querySelector('.container-reg').scrollIntoView({ behavior: "smooth" });  
+  
+    const element = document.querySelector(selector);  
+    const offset = 50; // Adjust the offset height  
+  
+    const elementPosition = element.getBoundingClientRect().top + window.scrollY - offset;  
+  
+    window.scrollTo({ top: elementPosition, behavior: "smooth" });  
+  }  
+</script>  
+  
 </html>
