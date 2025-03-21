@@ -26,13 +26,13 @@
   
     /* Navigation Bar */  
     .navbar {  
-      background: rgba(93, 64, 55, 0);  
+      background: rgba(93, 64, 55, .85);  
       /* Semi-transparent */  
       transition: background 0.3s ease-in-out;  
     }  
   
     .navbar.scrolled {  
-      background: rgba(93, 64, 55, 1);  
+      background: rgba(93, 64, 55, .98);  
       /* Fully opaque when scrolled */  
     }  
   
@@ -44,10 +44,13 @@
   
     .navbar .navbar-brand {  
       font-family: 'Tektur', sans-serif;  
-      color: white !important;  
-      font-weight: 600;  
-      opacity: 0;  
+      color: #892024 !important;  
+      font-weight: 500;  
+      /* opacity: 0; */  
       transition: opacity 0.3s ease-in-out;  
+      text-shadow: -1px -1px 0 #FFF, 1px -1px 0 #FFF, -1px 1px 0 #FFF, 1px 1px 0 #FFF, 1px 1px 3px rgba(0, 0, 0, 0.5);  
+      transform: scale(1.05);  
+      margin-left: 20px;  
     }  
   
     .navbar .navbar-brand.visible {  
@@ -59,13 +62,14 @@
     }  
   
     .banner {  
+      padding-top: 55px;  
       position: relative;  
       width: 100%;  
-      height: 50vh;  
-      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('banner.jpg') bottom/cover no-repeat;  
-      display: flex;  
+      /* height: 50vh; */  
+      /* background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('banner.png') bottom/cover no-repeat; */  
+      /* display: flex;  
       align-items: center;  
-      justify-content: center;  
+      justify-content: center; */  
       text-align: center;  
       color: white;  
     }  
@@ -229,36 +233,36 @@
     }  
   
     .scroll-buttons {  
-        position: fixed;  
-        bottom: 20px;  
-        right: 20px;  
-        display: flex;  
-        flex-direction: column;  
-        gap: 10px;  
-        z-index: 1000;  
+      position: fixed;  
+      bottom: 20px;  
+      right: 20px;  
+      display: flex;  
+      flex-direction: column;  
+      gap: 10px;  
+      z-index: 1000;  
     }  
   
     .scroll-buttons button {  
-        background: #8d5a2ba4;   
-        color: white;  
-        border: none;  
-        display: flex;  
-        justify-content: center;  
-        align-items: center;  
-        font-size: 1rem;  
-        border-radius: 50%;  
-        cursor: pointer;  
-        transition: all 0.3s ease-in-out;  
-        width: 35px;  
-        height: 35px;  
+      background: #8d5a2ba4;  
+      color: white;  
+      border: none;  
+      display: flex;  
+      justify-content: center;  
+      align-items: center;  
+      font-size: 1rem;  
+      border-radius: 50%;  
+      cursor: pointer;  
+      transition: all 0.3s ease-in-out;  
+      width: 35px;  
+      height: 35px;  
     }  
   
     .scroll-buttons button:hover {  
-        background: #A6723E;  
-        transform: scale(1.1);  
+      background: #A6723E;  
+      transform: scale(1.1);  
     }  
   
-    .scroll-buttons span{  
+    .scroll-buttons span {  
       transform: scale(0.6) rotate(90deg);  
       font-size: 15px;  
     }  
@@ -294,9 +298,9 @@
         width: 90%;  
       }  
   
-      .banner {  
+      /* .banner {  
         height: 30vh;  
-      }  
+      } */  
   
       .banner h1 {  
         font-size: 2.2em;  
@@ -368,7 +372,8 @@
     </div>  
   </nav>  
   <section class="banner">  
-    <h1 id="bannerTitle">Calamay Run 2025</h1>  
+    <img src="./images/banner.png" width="100%" height="auto" />  
+    <!-- <h1 id="bannerTitle">Calamay Run 2025</h1> -->  
   </section>  
   <div class="event-info">  
     <h3>Be Part of the Historic First-Ever Calamay Run in Jagna, Bohol!</h3>  
@@ -456,7 +461,7 @@
   </section>  
   
   <div class="scroll-buttons">  
-    <button id="btn-prev"><span class="carousel-control-prev-icon" aria-hidden="true"/></button>  
+    <button id="btn-prev"><span class="carousel-control-prev-icon" aria-hidden="true" /></button>  
     <button id="btn-next"><span class="carousel-control-next-icon" aria-hidden="true" /></button>  
   </div>  
 </body>  
@@ -469,7 +474,7 @@
       pause: 'hover'  
     });  
   
-    const bannerTitle = document.getElementById("bannerTitle");  
+    const bannerTitle = document.querySelector(".banner");  
     const navbarTitle = document.getElementById("navbarTitle");  
   
     const observer = new IntersectionObserver(entries => {  
@@ -482,7 +487,7 @@
       });  
     }, { threshold: 0.1 });  
   
-    observer.observe(bannerTitle);  
+    //observer.observe(bannerTitle);  
   
     //////////////////////////////////////////////////////////////    
   
@@ -551,7 +556,7 @@
           }  
         });  
       },  
-       {  
+      {  
         root: null,  
         rootMargin: `-${50}px 0px -${50}px 0px`, // Adjust detection margin  
         threshold: 0.5, // Adjust for better mobile behavior  
@@ -560,17 +565,17 @@
     sections.forEach((section) => observer.observe(section));  
   });  
   
-    
+  
   function scrollToSection(selector) {  
     // document.querySelector('.container-reg').scrollIntoView({ behavior: "smooth" });    
     const element = document.querySelector(selector);  
-    const offset = 50; // Adjust the offset height    
+    const offset = 55; // Adjust the offset height    
     const elementPosition = element.getBoundingClientRect().top + window.scrollY - offset;  
     window.scrollTo({ top: elementPosition, behavior: "smooth" });  
-  }   
+  }  
   
   function scrollToElement(element) {  
-    const offset = 50; // Adjust the offset height    
+    const offset = 55; // Adjust the offset height    
     const elementPosition = element.getBoundingClientRect().top + window.scrollY - offset;  
     window.scrollTo({ top: elementPosition, behavior: "smooth" });  
   }    
