@@ -6,6 +6,7 @@
     <title>Calamay Run 2025</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Tektur&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
       @font-face {
         font-family: 'Martires';
@@ -133,14 +134,15 @@
         text-align: center;
       }
 
-      .container-reg {
+      .container-reg, .container-maps {
         text-align: center;
         padding: 20px 10px 20px;
         width: 100% !important;
       }
 
       .container-reg>h2,
-      .container-shirt>h2,
+      .container-kits>h2,
+      .container-maps>h2,
       .container-video>h2 {
         font-family: 'Martires', 'Tektur', sans-serif;
         text-align: center;
@@ -153,8 +155,148 @@
         padding-bottom: 0px;
       }
 
-      .container-reg>h2 {
+      .container-reg>h2, .container-maps>h2 {
         margin-bottom: 10px;
+      }
+
+      .map-categories {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        flex-wrap: wrap;
+      }
+
+      .map-category {
+        background-color: #7B5E47;
+        padding: 25px;
+        border-radius: 6px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        width: 340px;
+        text-align: center;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        overflow: hidden;
+        color: #892024;
+        /* Calamay Red */
+        display: flex;
+        align-items: start;
+        justify-content: start;
+        flex-direction: column;
+        gap: 25px;
+      }
+
+      .map-category h2{
+        padding: 10px;
+        background-color: white;
+        width: 100px;
+        height: 100px;
+        font-size: 50px !important;
+        font-weight: bolder;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 3px;
+        margin: 0;
+      }
+
+      .cat-21{
+        background-color: rgba(52,143, 226, 1) !important;
+        color: #ffff !important;
+      }
+
+      .cat-12{
+        background-color: rgba(144,202, 75, 1) !important;
+        color: #fff !important;;
+      }
+
+      .cat-6{
+        background-color: rgba(246,166, 49, 1) !important;
+        color: #fff !important;;
+      }
+
+      .cat-3{
+        background-color: rgba(255,91, 87, 1) !important;
+        color: #fff !important;;
+      }
+
+      .btn.cat-21:hover{
+        background: rgb(82, 158, 228) !important;
+      }
+      .btn.cat-12:hover{
+        background-color: rgb(172, 226, 106) !important;
+      }
+      .btn.cat-6:hover{
+        background-color: rgb(236, 183, 104) !important;
+      }
+      .btn.cat-3:hover{
+        background-color: rgb(238, 139, 137) !important;
+      }
+
+      .map-category img{
+        width: 100%;
+        height: auto;
+        object-fit:fill;
+        border: 5px solid #ffff;
+        border-radius: 5px;
+      }
+
+      .map-category .btn {
+        display: inline-block;
+        background: #fff;
+        color: #000;
+        padding: 10px 15px;
+        border-radius: 5px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+        cursor: pointer;
+      }
+
+      .fullscreen-map{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(rgba(30,30,30,.9),#000 1810%);
+        z-index: 999999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        display: none;
+        overflow: hidden;
+      }
+
+      .fullscreen-map.show{
+        display: flex;
+      }
+    
+      .fullscreen-map .map-container{
+        padding: 0;
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        /* background-color: #fff; */
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      .fullscreen-map .map-container img{
+        width: 100%;
+        height: calc(100vh - 50px);
+        object-fit: contain;
+      }
+
+      .map-overlay{
+        display: flex;
+        gap: 20px;
+        justify-content: end;
+        padding-right: 25px;
+        padding-top: 10px;
+      }
+
+      .map-container .close-btn, .map-container .fullscreen-btn  {
+        cursor: pointer;
+        color: #ffff;
       }
 
       .categories {
@@ -219,7 +361,7 @@
         transform: scale(1.05);
       }
 
-      .container-shirt,
+      .container-kits,
       .container-video {
         background: #eadfdf7a;
         padding-top: 20px;
@@ -264,7 +406,7 @@
 
       .footer {
         margin-top: 50px;
-        padding: 10px;
+        padding: 40px 10px;
         background: #892024;
         /* Calamay Red */
         color: #FFF;
@@ -358,7 +500,7 @@
           color: #f8b400;
         }
 
-        .category {
+        .category, .map-category {
           width: 90%;
         }
 
@@ -376,8 +518,9 @@
           padding: 30px 30px;
         }
 
+        .container-maps h2,
         .container-reg h2,
-        .container-shirt h2,
+        .container-kits h2,
         .container-video h2 {
           font-size: 1.5em;
         }
@@ -422,7 +565,7 @@
               <a type="button" onclick="scrollToSection('.container-reg')" class="nav-link">Register</a>
             </li>
             <li class="nav-item">
-              <a type="button" onclick="scrollToSection('.container-shirt')" class="nav-link">Shirts</a>
+              <a type="button" onclick="scrollToSection('.container-kits')" class="nav-link">Race Kits</a>
             </li>
             <li class="nav-item">
               <a class="nav-link">Route</a>
@@ -447,8 +590,8 @@
       <a type="button" onclick="scrollToSection('.container-reg')" class="btn-register">Register Now</a>
     </div>
     <div class="shadow-divider"></div>
-    <section class="container-shirt">
-      <h2>Official Run Shirts</h2>
+    <section class="container-kits">
+      <h2>Official Race Kits</h2>
       <div id="carouselShirts" class="carousel carousel-dark slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselShirts" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -480,6 +623,33 @@
       </div>
     </section>
     <div class="shadow-divider"></div>
+    <section class="container-maps">
+      <h2>Course Guide</h2>
+      <p>Click on a course map below to see the full size map in a pop-up window ... or follow the links below each map for different viewers.</p>
+      <div class="map-categories">
+        <div class="map-category">
+          <h2 class="cat-21">21K</h2>
+          <img onclick="onClickMap(event)" src="./images/maps/maps-21km.png" alt="21K Map">
+          <a target="_blank" class="btn cat-21">Google Maps</a>
+        </div>
+        <div class="map-category">
+          <h2 class="cat-12">12K</h2>
+          <img onclick="onClickMap(event)" src="./images/maps/map-12km.png" alt="12K Map">
+          <a target="_blank" class="btn cat-12">Google Maps</a>
+        </div>
+        <div class="map-category">
+          <h2 class="cat-6">6K</h2>
+          <img onclick="onClickMap(event)" src="./images/maps/map-6km.png" alt="6k Map">
+          <a target="_blank" class="btn cat-6">Google Maps</a>
+        </div>
+        <div class="map-category">
+          <h2 class="cat-3">3K</h2>
+          <img onclick="onClickMap(event)" src="./images/maps/maps-3km.png" alt="3K Map">
+          <a target="_blank" class="btn cat-3">Google Maps</a>
+        </div>
+      </div>
+    </section>
+    <div class="shadow-divider"></div>
     <section class="container-reg">
       <h2>Select Your Race</h2>
       <div class="categories">
@@ -490,12 +660,12 @@
         </div>
         <div class="category">
           <img src="parent-child.jpg" alt="1.5K Parent-Child Run">
-          <h2>1.5K Parent-Child Run</h2>
+          <h2>3K Parent-Child Run</h2>
           <a href="https://forms.gle/Rw3q3EzBrqcwvMUw9">Join the Race</a>
         </div>
         <div class="category">
           <img src="student.jfif" alt="Student Rate Form">
-          <h2>Student Rate Form</h2>
+          <h2>6K Student Rate Form</h2>
           <a href="https://forms.gle/pLU5xoRn5vsLTCc8A">Join the Race</a>
         </div>
       </div>
@@ -523,6 +693,16 @@
       <button id="btn-next">
         <span class="carousel-control-next-icon" aria-hidden="true" />
       </button>
+    </div>
+
+    <div id="fullscreen-map" class="fullscreen-map" >
+      <div class="map-container">
+        <div class="map-overlay">
+          <svg onclick="openFullscreenMap()" class="fullscreen-btn" fill="#ffff" width="20px" height="20px" viewBox="0 0 18 18"><path class="fslightbox-svg-path" d="M4.5 11H3v4h4v-1.5H4.5V11zM3 7h1.5V4.5H7V3H3v4zm10.5 6.5H11V15h4v-4h-1.5v2.5zM11 3v1.5h2.5V7H15V3h-4z"></path></svg>
+          <svg onclick="closeFullscreenMap()" class="close-btn" width="20px" fill="#ffff" height="20px" viewBox="0 0 24 24"><path class="fslightbox-svg-path" d="M 4.7070312 3.2929688 L 3.2929688 4.7070312 L 10.585938 12 L 3.2929688 19.292969 L 4.7070312 20.707031 L 12 13.414062 L 19.292969 20.707031 L 20.707031 19.292969 L 13.414062 12 L 20.707031 4.7070312 L 19.292969 3.2929688 L 12 10.585938 L 4.7070312 3.2929688 z"></path></svg>
+        </div>
+        <img  id="map-image" src="./images/maps/maps-21km.png" alt="Fullscreen Map">
+      </div>
     </div>
   </body>
   <script>
@@ -631,6 +811,30 @@
         top: elementPosition,
         behavior: "smooth"
       });
+    }
+
+    function onClickMap(event) {
+      const fullscreenMap = document.getElementById("fullscreen-map");
+      const mapImage = document.getElementById("map-image");
+
+      fullscreenMap.classList.toggle("show");
+      mapImage.src = event.target.src;; // Set the source of the fullscreen image
+    }
+
+    function closeFullscreenMap() {
+      const fullscreenMap = document.getElementById("fullscreen-map");
+      fullscreenMap.classList.remove("show");
+    }
+
+    function openFullscreenMap() {
+      const mapImage = document.getElementById("map-image");
+      if (mapImage.requestFullscreen) {
+        mapImage.requestFullscreen();
+      } else if (mapImage.webkitRequestFullscreen) { // Safari
+        mapImage.webkitRequestFullscreen();
+      } else if (mapImage.msRequestFullscreen) { // IE11
+        mapImage.msRequestFullscreen();
+      }
     }
   </script>
 </html>
