@@ -329,6 +329,10 @@
         overflow: hidden;
         color: #892024;
         /* Calamay Red */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
       }
 
       .category:hover {
@@ -365,6 +369,9 @@
         cursor: pointer;
       }
 
+      .category a{
+        justify-self: end;
+      }
       .category a:hover,
       .btn-register:hover {
         background: #6E1A1E;
@@ -512,7 +519,7 @@
         }
 
         .category, .map-category {
-          width: 90%;
+          width: 95%;
         }
 
         /* .banner {
@@ -686,19 +693,24 @@
       <h2>Select Your Race</h2>
       <div class="categories">
         <div class="category">
-          <img src="regular.webp" alt="Regular Rates Category">
+          <img src="./images/categories/regular.webp" alt="Regular Rates Category">
           <h2>Regular Rate Form</h2>
-          <a href="https://forms.gle/EQXTc6kyrBh6nydp8">Join the Race</a>
+          <a target="_blank" href="https://forms.gle/EQXTc6kyrBh6nydp8">Join the Race</a>
         </div>
         <div class="category">
-          <img src="parent-child.jpg" alt="1.5K Parent-Child Run">
+          <img src="./images/categories/parent-child.jpg" alt="1.5K Parent-Child Run">
           <h2>3K Parent-Child Run</h2>
-          <a href="https://forms.gle/Rw3q3EzBrqcwvMUw9">Join the Race</a>
+          <a target="_blank" href="https://forms.gle/Rw3q3EzBrqcwvMUw9">Join the Race</a>
         </div>
         <div class="category">
-          <img src="student.jfif" alt="Student Rate Form">
+          <img src="./images/categories/student.jfif" alt="Student Rate Form">
           <h2>6K Student Rate Form</h2>
-          <a href="https://forms.gle/pLU5xoRn5vsLTCc8A">Join the Race</a>
+          <a target="_blank" href="https://forms.gle/pLU5xoRn5vsLTCc8A">Join the Race</a>
+        </div>
+        <div class="category">
+          <img src="./images/categories/senior-citizen.jpg" alt="Student Rate Form">
+          <h2>6K Senior Citizen Rate Form</h2>
+          <a target="_blank" href="https://forms.gle/368wSiNTv2LvJBvCA">Join the Race</a>
         </div>
       </div>
     </section>
