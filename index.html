@@ -662,17 +662,17 @@
         <div class="map-category">
           <h2 class="cat-21">21K</h2>
           <img onclick="onClickMap(event)" src="./images/maps/maps-21km.png" alt="21K Map">
-          <a target="_blank" class="btn cat-21">Google Maps</a>
+          <a class="btn cat-21" type="button" onclick="onClickMap(event, 'embed')" href="https://www.google.com/maps/d/embed?mid=14pArZutJqy-dv8jxIZ77fKDNIRosnFo&ehbc=2E312F&noprof=1">Google Map</a>
         </div>
         <div class="map-category">
           <h2 class="cat-12">12K</h2>
           <img onclick="onClickMap(event)" src="./images/maps/map-12km.png" alt="12K Map">
-          <a target="_blank" class="btn cat-12">Google Maps</a>
+          <a class="btn cat-12" type="button" onclick="onClickMap(event, 'embed')" href="https://www.google.com/maps/d/view?mid=1xsJhA9M79sJ_H7KLFw-jzLiJb_P_gTk&ehbc=2E312F&noprof=1">Google Map</a>
         </div>
         <div class="map-category">
           <h2 class="cat-6">6K</h2>
           <img onclick="onClickMap(event)" src="./images/maps/map-6km.png" alt="6k Map">
-          <a target="_blank" class="btn cat-6">Google Maps</a>
+          <a class="btn cat-6" type="button" onclick="onClickMap(event, 'embed')" href="https://www.google.com/maps/d/embed?mid=1RU59-7KxPIQQSYgxUJ24UxVwa2wVleM&ehbc=2E312F&noprof=1">Google Map</a>
         </div>
         <div class="map-category">
           <h2 class="cat-3">3K</h2>
@@ -740,6 +740,13 @@
           <svg onclick="closeFullscreenMap()" class="close-btn" width="20px" fill="#ffff" height="20px" viewBox="0 0 24 24"><path class="fslightbox-svg-path" d="M 4.7070312 3.2929688 L 3.2929688 4.7070312 L 10.585938 12 L 3.2929688 19.292969 L 4.7070312 20.707031 L 12 13.414062 L 19.292969 20.707031 L 20.707031 19.292969 L 13.414062 12 L 20.707031 4.7070312 L 19.292969 3.2929688 L 12 10.585938 L 4.7070312 3.2929688 z"></path></svg>
         </div>
         <img  id="map-image" src="./images/maps/maps-21km.png" alt="Fullscreen Map">
+      </div>
+    </div>
+
+    <div id="fullscreen-google-map" class="fullscreen-map" >
+      <div class="map-container">
+        <svg title="Close Map" style="position: absolute; right:130px; top: 18px; width: 25px; height: 25px;" onclick="closeFullscreenMap('embed')" class="close-btn" width="15px" height="15px" fill="#ffff" viewBox="0 0 24 24"><path class="fslightbox-svg-path" d="M 4.7070312 3.2929688 L 3.2929688 4.7070312 L 10.585938 12 L 3.2929688 19.292969 L 4.7070312 20.707031 L 12 13.414062 L 19.292969 20.707031 L 20.707031 19.292969 L 13.414062 12 L 20.707031 4.7070312 L 19.292969 3.2929688 L 12 10.585938 L 4.7070312 3.2929688 z"></path></svg>
+        <iframe id="gmap-iframe"  width="100%" height="100%"></iframe>
       </div>
     </div>
   </body>
@@ -851,16 +858,19 @@
       });
     }
 
-    function onClickMap(event) {
-      const fullscreenMap = document.getElementById("fullscreen-map");
-      const mapImage = document.getElementById("map-image");
+    function onClickMap(event, type="img") {
+
+      event.preventDefault(); // Prevent default link behavior
+
+      const fullscreenMap = document.getElementById( type == "img" ? "fullscreen-map" : "fullscreen-google-map" );
+      const mapElement = document.getElementById(type == "img" ? "map-image" : 'gmap-iframe' );
 
       fullscreenMap.classList.toggle("show");
-      mapImage.src = event.target.src;; // Set the source of the fullscreen image
+      mapElement.src = type == "img" ? event.target.src : event.target.href; // Set the source of the fullscreen image
     }
 
-    function closeFullscreenMap() {
-      const fullscreenMap = document.getElementById("fullscreen-map");
+    function closeFullscreenMap(type="img") {
+      const fullscreenMap = document.getElementById( type == "img" ? "fullscreen-map": 'fullscreen-google-map');
       fullscreenMap.classList.remove("show");
     }
 
